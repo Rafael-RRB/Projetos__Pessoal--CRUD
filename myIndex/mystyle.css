@@ -1,0 +1,266 @@
+/* Universal */
+body, body * {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  transition: 200ms;
+}
+body *:focus, body *:focus-visible {
+  filter: saturate(1.5) brightness(0.75);
+}
+
+:root {
+  font-size: 10px;
+}
+
+/* Shared */
+.header, .footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(70, 70, 134);
+}
+a,button,input {
+  min-width: 50px;
+  width: 5rem;
+  min-height: 50px;
+  height: 5rem;
+  cursor: pointer;
+}
+a:hover, button:hover, input:hover {
+  filter: saturate(1.5) brightness(0.75);
+}
+/* Generic Classes */
+.spanDots {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  opacity: 0;
+  max-width: 1px;
+  max-height: 1px;
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* Classes */
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+.modalwrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.modal {
+  min-width: 260px;
+  width: 80%;
+  max-width: 40rem;
+  margin: auto;
+  border-radius: 2rem;
+  color: #212121;
+  background-color: #fff;
+  position: fixed;
+  z-index: 1;
+}
+  .modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+    .modal__header__title {
+      width: 100%;
+      font-size: 2rem;
+      font-weight: 900;
+      text-align: center;
+    }
+    .modal__header__btn-close {
+      background: transparent url('./fechar.svg') no-repeat center / 3rem;
+    }
+  .modal__main {
+    padding: 0 1rem;
+  }
+      .form__label {
+        display: block;
+        margin-bottom: 2rem;
+      }
+      .label__title {
+        font-size: 1.6rem;
+        padding-bottom: 1rem;
+      }
+      .form__input {
+        width: 100%;
+        border: .2rem solid #ccc;
+        border-radius: 1rem;
+        padding: 0 1rem;
+        font-size: 1.4rem;
+      }
+  .modal__footer {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0rem 1rem 2rem;
+    gap: 1rem;
+  }
+    .modal__footer__button {
+      width: 10rem;
+      border-radius: 1rem;
+      font-size: 1.2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .button--save {
+      background-color: #006800;
+    }
+    .button--cancel {
+      background-color: #B60000;
+    }
+  .header {
+    justify-content: space-between;    
+    padding: 2rem 1rem;
+  }
+    .header__return {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 900;
+      text-decoration: none;
+      color: #EEE;
+      width: 10rem;
+      background-color: transparent;
+      border: .3rem solid #FFF;
+      border-radius: 1rem;
+      transition: 200ms;
+    }
+    .header__title {
+      color: #EEE;
+      font-size: 2.4rem;
+      font-weight: 900;
+      padding: 3rem 0 1rem 0;
+    }
+  .main {
+    min-height: calc(100vh - 230px);
+    height: auto;
+  }
+    .table__row {
+      border-bottom: .1rem solid #ccc;
+    }
+    .userlist {
+      min-width: 260px;
+      width: 80%;
+      max-width: 64rem;
+      margin: auto;
+      border-collapse: collapse;
+    }
+        .userlist__title {
+          font-size: 2rem;
+          font-weight: 900;
+        }
+      .table__row {
+          display: flex;
+      }
+      .table__row--noborder {
+        border: none;
+      }
+        .row__cell {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          font-size: 1.2rem;
+          text-align: center;
+          min-width: 5rem;
+          min-height: 5rem;
+        }
+        .row__label {
+          font-size: 1.4rem;
+        }
+        .cell--title {
+          width: 100%;
+        }
+        .cell--name {
+          min-width: 5rem;
+          width: 20%;
+        }
+        .cell--email {
+          min-width: 11rem;
+          width: 40%;
+        }
+        .cell--empty {
+          width: 10rem;
+        }
+        .cell__button--edit {
+          background: transparent url(./editar.svg) no-repeat center / 40%;
+        }
+        .cell__button--delete {
+          background: transparent url(./excluir.svg) no-repeat center / 40%;
+        }
+        .cell__button--edit:focus, .cell__button--delete:focus, .cell__button--edit:hover, .cell__button--delete:hover {
+          outline: .1rem auto;
+        }
+      .userlist__add, .userlist__expand {
+        width: 10rem;
+        color: #EEE;
+        border-radius: 1rem;
+        background-color: rgb(70, 70, 134);
+      }
+      .userlist__add {
+        margin: 0 0 2rem 0;
+      }
+      .userlist__expand {
+        margin: 2rem 0;
+      }
+  .footer {
+    justify-content: center;
+    height: 5rem;
+  }
+    .footer__copyright {
+      color: #EEE;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+/* JavaScript */
+.js__none {
+  display: none;
+}
+
+@media screen and (min-width: 428px) {
+  .userlist {
+    margin: 5% auto;
+  }
+  .table__row {
+    justify-content: space-between;
+    padding-left: 1.75rem;
+  }
+    .table__row--noborder, .table__row--center {
+      padding-left: 0;
+    }
+  .modal__header {
+    padding: 2rem 2rem 0;
+  } 
+  .modal__main {
+    padding: 2rem;
+  }
+  .modal__footer {
+    padding: 0 2rem 2rem;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  :root {
+    font-size: .6vw;
+  }
+}
